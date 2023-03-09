@@ -51,3 +51,24 @@ def data_notifcations():
 Finnaly we added DynamoDB and Postgres in our docker-compose file and make sure they work.
 
 ![DynamoDB-Postgres](assets/AddingDynamoDBandPostgres.png)
+
+
+## Homework Challenges
+ ### Run the dockerfile CMD as an external script
+ I added the following code to the Docker file in the /backend-flask docker file
+ 
+ ```
+ COPY script.sh /script.sh
+RUN chmod +x /script.sh
+
+#CMD (Command)
+#python3 -m flask run --host=0.0.0.0 --port=4567
+ENTRYPOINT [ "/script.sh" ]
+CMD []
+ ```
+ Added a script.sh file in the /backend-flask directory with the pytho3 command.
+ 
+ ```
+ #!/bin/bash
+python3 -m flask run --host=0.0.0.0 --port=4567
+ ```
