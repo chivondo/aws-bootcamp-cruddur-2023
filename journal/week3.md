@@ -59,14 +59,14 @@ import { Auth } from 'aws-amplify';
         setErrors(error.message)
     }
     return false
-
+```
 ### Implement Custom Confirmation Page
 Screenshot of the result shown after the configuration of the ConfirmationPage.js 
-![ConfirmationPage](assets/SignUpPageConfirmation)
+![ConfirmationPage](assets/SignUpPageConfirmation.png)
 
 ### Implement Custom Recovery Page
 
-![RecoverPassword](assets/RecoverPassword)
+![RecoverPassword](assets/RecoverPassword.png)
 ### Adding backend check token
 
 After adding the token in the backend. We added the following code to check if the token is being authenticade then it will show the message after sign in.
@@ -83,8 +83,8 @@ After adding the token in the backend. We added the following code to check if t
         }
         results.insert(0,extra_crud)
  ```
-![SignIn](assets/SignInSuccess)
+![TokenBackend](assets/TokenBackend.png)
 
-After we sign out the message no longer should show in the homepage because the user is not authenticaded.
+After we signed out, the message no longer should show in the homepage because the user is not authenticaded.
 
-![SecretMessageGone](assets/SecretMessageNoLongerAppears)
+![SecretMessageGone](assets/SecretMessageNoLongerAppears.png)
