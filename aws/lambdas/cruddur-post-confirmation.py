@@ -14,18 +14,18 @@ def lambda_handler(event, context):
         cur = conn.cursor()
            
         sql = f"""
-            "INSERT INTO users (
+            INSERT INTO users (
                 display_name, 
                 handle, 
                 email,
                 cognito_user_id)
                 )
             VALUES(
-                    {user_display_name},
-                    {user_email},
-                    {user_handle},
-                    {user_cognito_id}
-                    )"
+                    '{user_display_name}',
+                    '{user_email}',
+                    '{user_handle}',
+                    '{user_cognito_id}'
+                    )
             """
 
 
