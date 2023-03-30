@@ -35,12 +35,34 @@ The instance is created in AWS:
 
 ### Create Schema for PostGres
 
+Is good idea to obscure your uuid so competitors cannot guess how many users you have.
+
+Created a folder called "DB" with a file called schema.sql and added the following:
+`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`
+
+Created variables `export CONNECTION_URL="postgresql://postgres:pssword@localhost:5433/cruddur"`
+
+`PROD_CONNECTION_URL="postgresql://root:randompassword@cruddur-db-instance.cmwiefs6f5yu.us-east-1.rds.amazonaws.com:5432/cruddur"`
+
 
 ### Watched Ashish's Week 4 security Considerations
 
 
 ### Bash Scripting for common database actions
 
+Created a folder "bin" to create bash scripts for actions
+
+Added a total of 7 bash scripts for database actions 
+- db-connect 
+- db-create
+- db-drop
+- db-schema-load
+- db-seed
+- db-sessions
+- db-setup
+
+Everytime you create a file you need to change permisions with the command chmod
+`chmod u+x bin/db-connect`
 
 
 ### Install Postgres driver in backend application
