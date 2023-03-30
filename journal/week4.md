@@ -27,6 +27,9 @@ aws rds create-db-instance \
   --performance-insights-retention-period 7 \
   --no-deletion-protection
 ```
+The instance is created in AWS: 
+
+![RDSIntance](/assets/RDSInstance.png)
 
 
 
