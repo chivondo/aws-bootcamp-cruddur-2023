@@ -29,7 +29,7 @@ aws rds create-db-instance \
 ```
 The instance is created in AWS: 
 
-![RDSIntance](/assets/RDSInstance.png)
+![RDSInstance](assets/RDSInstance.png)
 
 
 
