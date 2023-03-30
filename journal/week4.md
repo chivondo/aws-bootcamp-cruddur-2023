@@ -64,6 +64,10 @@ Added a total of 7 bash scripts for database actions
 Everytime you create a file you need to change permisions with the command chmod
 `chmod u+x bin/db-connect`
 
+Use command **sed** to manipulate strings
+
+`NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")`
+
 
 ### Install Postgres driver in backend application
 
