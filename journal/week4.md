@@ -71,7 +71,20 @@ Use command **sed** to manipulate strings
 
 ### Install Postgres driver in backend application
 
+Use command `\x on` to easily display tables in the terminal
 
+Need to add psycopg in the requirements.txt file for the postgres drive in the backend
+```
+psycopg[binary]
+psycopg[pool]
+
+```
+Create file db.py in the "lib" folder and import the ConnectionPool
+
+After implementing the pool conenction and the changes in homeactivities.py we got our first query in the app
+
+
+![FirstQuery](assets/FirstQueryShown.png)
 
 ### Connect Gitpod to RDS Instance
 
