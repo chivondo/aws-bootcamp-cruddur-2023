@@ -47,6 +47,7 @@ Created variables `export CONNECTION_URL="postgresql://postgres:pssword@localhos
 
 ### Watched Ashish's Week 4 security Considerations
 
+Make takeaways is to use best security practice for a AWS RDS database. The principle is that the database shouldn't connect directly to the internet and public. Since we are on a developing face, is ok to have the database public but still need to create security policy to only allow permitted IP addresses.
 
 ### Bash Scripting for common database actions
 
@@ -88,8 +89,33 @@ After implementing the pool conenction and the changes in homeactivities.py we g
 
 ### Connect Gitpod to RDS Instance
 
+Created script called "rds-update-sg-rule". So everytime we open Gitpod, the security rule for AWS RDS automatically will change to the new IP address assigned by gitpod. 
 
+```
+#! /usr/bin/bash
+
+#echo "==rds-update-sg-rule"
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="rds-update-sg-rule"
+printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
+
+aws ec2 modify-security-group-rules \
+    --group-id $DB_SG_ID \
+    --security-group-rules "SecurityGroupRuleId=$DB_SG_RULE_ID,SecurityGroupRule={Description=GITPOD,IpProtocol=tcp,FromPort=5432,ToPort=5432,CidrIpv4=$GITPOD_IP/32}"
+```
+Need to also make sure that the script is run during Gitpod startup by adding the following in the gitpod.yml
+
+```
+command: |
+      export GITPOD_IP=$(curl ifconfig.me)
+      source "$THEIA_WORKSPACE_ROOT/backend-flask/bin/rds-update-sg-rule"
+```
+Finally update the "db-connect" script so we can run the script and connect to the production database.
 ### Create AWS Cognito trigger to insert user into databse
 
+We need to pass the "cognito_user_id" to our database to authenticate the user, and the best way is using a the AWS cognito hook by deploying a AWS Lambda code.
+
+Add the code in a new file called "crddur-post-confirmation" in a folder
 
 ### Create new activities with a database insert
