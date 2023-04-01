@@ -116,6 +116,14 @@ Finally update the "db-connect" script so we can run the script and connect to t
 
 We need to pass the "cognito_user_id" to our database to authenticate the user, and the best way is using a the AWS cognito hook by deploying a AWS Lambda code.
 
-Add the code in a new file called "crddur-post-confirmation" in a folder
+Add the code in a new file called "crddur-post-confirmation" in a folder, and add the code in the Lambda function in the AWS portal.
+
+Make sure a VPC is assigned to the function.
+
+Look at the logs and records in AWS to check for errors is very useful and needed to troubleshoot.
 
 ### Create new activities with a database insert
+
+This was the most challenging video and actitivity so far in the bootcamp. It was very hard for me to follow up the in the video. I needed to watch the entire video and later copy the code from Andrew's repository. Definitely I need to spend more time on learning coding databases in python. I would get an error about invalid UUID. This was due to the user_handle was hardcode to "andrewbrown" instead of my user name. I hardcoded the handle to mine and it started working. Later this needs to be fix because the app only is working for one user.
+
+![FirstPost](assets/FirstPost.png)
