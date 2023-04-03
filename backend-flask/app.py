@@ -164,6 +164,7 @@ def data_messages(message_group_uuid):
   except TokenVerifyError as e:
     # unauthenicatied request
     app.logger.debug(e)
+    return {}, 401
 
 @app.route("/api/messages", methods=['POST','OPTIONS'])
 @cross_origin()
