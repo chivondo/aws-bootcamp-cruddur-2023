@@ -1,4 +1,4 @@
-FROM python:3.10-slim-buster
+FROM 413901507521.dkr.ecr.us-east-1.amazonaws.com/cruddur-python:3.10-slim-buster
 
 # InsideContainer
 # make a new folder inside container
@@ -20,7 +20,7 @@ COPY . .
 
 # Set Environment Variables
 # Inside Container and will remerin set when the container is running
-ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
 
 EXPOSE ${PORT}
 
@@ -30,5 +30,6 @@ RUN chmod +x /script.sh
 #CMD (Command)
 #python3 -m flask run --host=0.0.0.0 --port=4567
 
-ENTRYPOINT [ "/script.sh" ]
-CMD []
+#ENTRYPOINT [ "/script.sh" ]
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=4567"]
+
