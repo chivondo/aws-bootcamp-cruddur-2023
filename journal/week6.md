@@ -2,6 +2,31 @@
 
 ## Required Homework
 
+### Watch ECS Security by Ashish
+
+### Provision ECS Cluster
+
+### Create ECR repo and push image for backend-flask
+
+### Deploy Backend Flask app as a service to Fargate
+
+### Create ECR repo and push image for fronted-react-js
+
+### Deploy Frontend React JS app as a service to Fargate
+
+### Provision and configure Application Load Balancer along with target groups
+
+
+### Manage your domain using Route53 via hosted zone
+
+### Create an SSL cerificate via ACM
+
+### Setup a record set for naked domain to point to frontend-react-js
+
+### Setup a record set for api subdomain to point to the backend-flask
+
+### Configure CORS to only permit traffic from our domain
+
 ### Secure Flask by not running in debug mode
 ``` 
 docker run --rm \
@@ -23,3 +48,16 @@ docker run --rm \
 -e AWS_COGNITO_USER_POOL_CLIENT_ID="3k4tj2dvb7e2nknr9a7gnncou7" \   
 -it backend-flask-prod
 ```
+
+### Implement Refresh Token for Amazon Cognito
+
+### Refactor bin directory to be top level
+
+### Configure task defintions to contain x-ray and turn on Container Insights
+
+### Change Docker Compose to explicitly use a user-defined network
+
+### Create Dockerfile specfically for production use case
+
+### Using ruby generate out env dot files for docker using erb templates
+
