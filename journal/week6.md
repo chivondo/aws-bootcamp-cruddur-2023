@@ -55,6 +55,25 @@ docker run --rm \
 
 ### Configure task defintions to contain x-ray and turn on Container Insights
 
+Add following to task-definition under container
+```
+  {
+        "name": "xray",
+        "image": "public.ecr.aws/xray/aws-xray-daemon" ,
+        "essential": true,
+        "user": "1337",
+        "portMappings": [
+          {
+            "name": "xray",
+            "containerPort": 2000,
+            "protocol":"udp"
+          }
+          ]
+      },
+```
+Fix Networking - and create bash scripts for the env variable.
+Create Ruby script 
+
 ### Change Docker Compose to explicitly use a user-defined network
 
 ### Create Dockerfile specfically for production use case
