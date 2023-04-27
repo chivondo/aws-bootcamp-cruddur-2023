@@ -10,6 +10,19 @@
     ],
     "containerDefinitions": [
       {
+        "name": "xray",
+        "image": "public.ecr.aws/xray/aws-xray-daemon" ,
+        "essential": true,
+        "user": "1337",
+        "portMappings": [
+          {
+            "name": "xray",
+            "containerPort": 2000,
+            "protocol":"udp"
+          }
+          ]
+      },
+      {
         "name": "backend-flask",
         "image": "413901507521.dkr.ecr.us-east-1.amazonaws.com/backend-flask:latest",
         "essential": true,
@@ -54,7 +67,7 @@
           {"name": "CONNECTION_URL"       , "valueFrom": "arn:aws:ssm:us-east-1:413901507521:parameter/cruddur/backend-flask/CONNECTION_URL" },
           {"name": "ROLLBAR_ACCESS_TOKEN" , "valueFrom": "arn:aws:ssm:us-east-1:413901507521:parameter/cruddur/backend-flask/ROLLBAR_ACCESS_TOKEN" },
           {"name": "OTEL_EXPORTER_OTLP_HEADERS" , "valueFrom": "arn:aws:ssm:us-east-1:413901507521:parameter/cruddur/backend-flask/OTEL_EXPORTER_OTLP_HEADERS" }
-        ]
+            ]
       }
     ]
   }
