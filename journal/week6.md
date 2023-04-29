@@ -104,10 +104,14 @@ Request a SSL certificate using the AWS Certificate Manager. It has to be public
 * In the ALB application set up listener Port 443 to forward to the cruddur-frontend-react-js-tg
 
 
+![FrontEndDomain](assets/FrontEndDomain.png)
+
 
 ### Setup a record set for api subdomain to point to the backend-flask
 * Create record for api.verainsvestmentsllc.com
 * If domain is api.verainvestmentsllc.com then forward to target group backend-flask-tg
+
+![APIDomain](assets/apidomain.png)
 
 ### Configure CORS to only permit traffic from our domain
 
