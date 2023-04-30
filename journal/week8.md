@@ -15,9 +15,9 @@ Most of our code will live in the lib folder
 Need to create .env file
 
 #### Commands to know: 
-`cdk synth`
-Bootstrapping `cdk bootstrap "aws://$AWS_ACCOUNT_ID/$AWS_DEFAULT_REGION"`
-Deploy `cdk deploy`
+* Quickly check your code for errors `cdk synth`
+* Bootstrapping `cdk bootstrap "aws://$AWS_ACCOUNT_ID/$AWS_DEFAULT_REGION"`
+* Deploy `cdk deploy`
 
 ### Serve Avatars via CloudFront
 
