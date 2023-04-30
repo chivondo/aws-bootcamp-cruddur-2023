@@ -115,12 +115,20 @@ Request a SSL certificate using the AWS Certificate Manager. It has to be public
 
 ### Configure CORS to only permit traffic from our domain
 
+Added my domain to the FRONTEND_URL and BACKEND_URL in the task definitions. Before we had the * wildcard to allow traffic from everywhere. : 
+```
+{"name": "FRONTEND_URL", "value": "https://verainvestmentsllc.com"},
+{"name": "BACKEND_URL", "value": "https://api.verainvestmentsllc.com"},
+```
+
 ### Secure Flask by not running in debug mode
 
  - Add the --debug parameter in the CMD []  at the dev Dockerfile 
  - Add ` "--no-debug", "--no-debugger", "--no-reload"` in the Dockerfile.prod
 
 ### Implement Refresh Token for Amazon Cognito
+
+
 
 ### Refactor bin directory to be top level
 
