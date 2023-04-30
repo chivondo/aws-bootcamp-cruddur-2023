@@ -128,7 +128,7 @@ Added my domain to the FRONTEND_URL and BACKEND_URL in the task definitions. Bef
 
 ### Implement Refresh Token for Amazon Cognito
 
-
+Update file CheckAuth.js by adding function getAccessToken(). Every file in the front end that is using the CheckAuth lib needs to be updated with the new function.
 
 ### Refactor bin directory to be top level
 
