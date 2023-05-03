@@ -66,6 +66,18 @@ After implementing our CDK. We can upload our images using serverless image proc
 
 ### Serve Avatars via CloudFront
 
+Need to create a new record in your hosted zone assets.domain.com to Cloudfront alias
+
+Update policies in the s3 bucket to allow cloudfront.
+
+Create new bucket "cruddur-uploaded-avatars-jv84" for the original image and use the existing assets bucket for the processed image. That way it adds an extra layer of security. 
+
+Update scripts and thumbing cdk file to match the 2 buckets. One for upload folder and another for the assets folder.
+
+
+We can access the processed image on the web
+![cloudfrontimage](assets/cloudfrontimage.png)
+
 ### Implement Users Profile Page
 
 ### Implement Users Profile Form
