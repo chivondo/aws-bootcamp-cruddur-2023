@@ -80,6 +80,12 @@ We can access the processed image on the web
 
 ### Implement Users Profile Page
 
+Create users SQL template -> show.sql
+
+Create EditProfileButton
+
+Modify 
+
 ### Implement Users Profile Form
 
 ### Implement Backend Migrations
