@@ -1,5 +1,5 @@
 import './ProfileHeading.css';
-import EditProfileButton from '../components/EditProfileButton';
+import EditProfileButton from 'components/EditProfileButton';
 
 export default function ProfileHeading(props) {
   const backgroundImage = 'url("https://assets.verainvestmentsllc.com/banners/banner.jpg")';

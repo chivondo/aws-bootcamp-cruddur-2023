@@ -1,12 +1,12 @@
 import './HomeFeedPage.css';
 import React from "react";
 
-import DesktopNavigation  from '../components/DesktopNavigation';
-import DesktopSidebar     from '../components/DesktopSidebar';
-import ActivityFeed from '../components/ActivityFeed';
-import ActivityForm from '../components/ActivityForm';
-import ReplyForm from '../components/ReplyForm';
-import {checkAuth, getAccessToken} from '../lib/CheckAuth';
+import DesktopNavigation  from 'components/DesktopNavigation';
+import DesktopSidebar     from 'components/DesktopSidebar';
+import ActivityFeed from 'components/ActivityFeed';
+import ActivityForm from 'components/ActivityForm';
+import ReplyForm from 'components/ReplyForm';
+import {checkAuth, getAccessToken} from 'lib/CheckAuth';
 
 export default function HomeFeedPage() {
   const [activities, setActivities] = React.useState([]);
@@ -53,10 +53,10 @@ export default function HomeFeedPage() {
     <article>
       <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
       <div className='content'>
-        <ActivityForm  
-          popped={popped}
+        <ActivityForm 
+          popped={popped} 
           setPopped={setPopped} 
-          setActivities={setActivities} 
+          setActivities={setActivities}
         />
         <ReplyForm 
           activity={replyActivity} 
