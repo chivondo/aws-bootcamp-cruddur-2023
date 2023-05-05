@@ -84,7 +84,16 @@ Create users SQL template -> show.sql
 
 Create EditProfileButton
 
-Modify 
+Modify HomeFeedPage.js ; NotifcationsFeedPage.js; UserFeedPage.js
+
+Add ProfileHeading.js and ProfileHeading.css  . This will reside our profile image, banners and handle. 
+
+Modify ProfileHeading.css to display aesthetically in our website.
+
+End Result:
+
+![Implementusersprofile](assets/userprofile.png)
+
 
 ### Implement Users Profile Form
 
