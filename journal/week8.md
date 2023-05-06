@@ -90,6 +90,8 @@ Add ProfileHeading.js and ProfileHeading.css  . This will reside our profile ima
 
 Modify ProfileHeading.css to display aesthetically in our website.
 
+Add block needs to be disabled in order for the banner to show up
+
 End Result:
 
 ![Implementusersprofile](assets/userprofile.png)
