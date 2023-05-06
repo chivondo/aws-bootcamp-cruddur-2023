@@ -40,9 +40,10 @@ tasks:
       cp .env.example .env
       npm i
   - name: sharp
-    command: :|
+    command: |
       source "$THEIA_WORKSPACE_ROOT/bin/avatar/sharp"
   - name: docker
+    command: |
       source "$THEIA_WORKSPACE_ROOT/bin/ecr/login"
 vscode:
   extensions:
