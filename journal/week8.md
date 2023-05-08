@@ -102,10 +102,10 @@ End Result:
 
 
 ### Implement Backend Migrations
-Create a migration script file under bin
-Create migrate script file under db
-Create rollback script file under db
-Update db.py
+* Create a migration script file under bin
+* Create migrate script file under db
+* Create rollback script file under db
+* Update db.py
 
 ### Presigned URL generation via Ruby Lambda
 
