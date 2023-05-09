@@ -109,10 +109,11 @@ End Result:
 
 ### Presigned URL generation via Ruby Lambda
 * Create ruby function to upload images to presigned url.
-Create gem file and add requirements `bundle install`
-Execute file 
-Create JWT authorizer
-
+- Create gem file and add requirements `bundle install`
+- Execute file `bundle exec ruby function.rb
+- Create JWT authorizer
+* Create API Gateway
+* 
 ### HTTP API Gateway with Lambda Authorizer
 
 ### Create JWT Lambda Layer
