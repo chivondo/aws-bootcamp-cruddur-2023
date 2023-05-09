@@ -8,6 +8,7 @@ tasks:
       unzip awscliv2.zip
       sudo ./aws/install
       cd $THEIA_WORKSPACE_ROOT
+      bash bin/ecr/login
   - name: postgres
     before: |
       curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
@@ -42,9 +43,6 @@ tasks:
   - name: sharp
     command: |
       source "$THEIA_WORKSPACE_ROOT/bin/avatar/sharp"
-  - name: docker
-    command: |
-      source "$THEIA_WORKSPACE_ROOT/bin/ecr/login"
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
