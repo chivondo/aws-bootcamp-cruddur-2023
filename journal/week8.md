@@ -108,6 +108,10 @@ End Result:
 * Update db.py
 
 ### Presigned URL generation via Ruby Lambda
+* Create ruby function to upload images to presigned url.
+Create gem file and add requirements `bundle install`
+Execute file 
+Create JWT authorizer
 
 ### HTTP API Gateway with Lambda Authorizer
 
