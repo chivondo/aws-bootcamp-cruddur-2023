@@ -9,6 +9,6 @@ export default function EditProfileButton(props) {
   }
 
   return (
-    <button onClick={pop_profile_form} className='edit-profile-button' href="#">Edit Profile</button>
+    <button onClick={pop_profile_form} className='profie-edit-button' href="#">Edit Profile</button>
   );
 }
