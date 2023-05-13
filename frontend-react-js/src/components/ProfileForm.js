@@ -4,16 +4,15 @@ import process from 'process';
 import {getAccessToken} from 'lib/CheckAuth';
 
 export default function ProfileForm(props) {
-  const [bio, setBio] = React.useState(0);
-  const [displayName, setDisplayName] = React.useState(0);
+  const [bio, setBio] = React.useState('');
+  const [displayName, setDisplayName] = React.useState('');
 
   React.useEffect(()=>{
-    console.log('useEffects',props)
     setBio(props.profile.bio || '');
     setDisplayName(props.profile.display_name);
   }, [props.profile])
 
-  const s3uploadkey = async (extension) => {
+  const s3uploadkey = async (extension)=> {
     console.log('ext',extension)
     try {
       const gateway_url = `${process.env.REACT_APP_API_GATEWAY_ENDPOINT_URL}/avatars/key_upload`
@@ -42,7 +41,6 @@ export default function ProfileForm(props) {
       console.log(err);
     }
   }
-
   const s3upload = async (event)=> {
     console.log('event',event)
     const file = event.target.files[0]
@@ -72,9 +70,7 @@ export default function ProfileForm(props) {
     }
   }
 
-
   const onsubmit = async (event) => {
-    console.log('event',event)
     event.preventDefault();
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/profile/update`
@@ -114,7 +110,6 @@ export default function ProfileForm(props) {
   }
 
   const close = (event)=> {
-    console.log('close',event.target)
     if (event.target.classList.contains("profile_popup")) {
       props.setPopped(false)
     }
@@ -134,9 +129,9 @@ export default function ProfileForm(props) {
             </div>
           </div>
           <div className="popup_content">
-            <div className='upload' onClick={s3upload}>
-              Upload Avatar
-            </div>
+            
+          <input type="file" name="avatarupload" onChange={s3upload} />
+
             <div className="field display_name">
               <label>Display Name</label>
               <input
