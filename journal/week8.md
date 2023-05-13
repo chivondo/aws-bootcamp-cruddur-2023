@@ -98,14 +98,20 @@ End Result:
 
 
 ### Implement Users Profile Form
+Modify app.py to add a update_profile route.
 
+Add update_profile.py in the service folder
+
+Create `ProfileForm.js` and `ProfileForm.css`  .This is where the Bio and the upload avatar image resides.
 
 
 ### Implement Backend Migrations
+* Create `update.sql`
 * Create a migration script file under bin
 * Create migrate script file under db
 * Create rollback script file under db
 * Update db.py
+* ![ProfileForm](assets/profileform.png)
 
 ### Presigned URL generation via Ruby Lambda
 * Create ruby function to upload images to presigned url.
