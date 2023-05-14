@@ -1,7 +1,7 @@
 import './ProfileAvatar.css';
 
 export default function ProfileAvatar(props) {
-  const backgroundImage = `url("https://assets.verainvestments.com/avatars/${props.id}.jpg")`;
+  const backgroundImage = `url("https://assets.verainvestmentsllc.com/avatars/${props.id}.jpg")`;
   const styles = {
     backgroundImage: backgroundImage,
     backgroundSize: 'cover',
