@@ -131,7 +131,7 @@ Create `ProfileForm.js` and `ProfileForm.css`  .This is where the Bio and the up
 ### Create JWT Lambda Layer
 
    Image with cognito ID shows in the assets folder:
-  ![CognitoID](assets/cognitoID)
+  ![CognitoID](assets/cognitoID.png)
    
 ### Render Avatars in App via CloudFront
    * Create ProfileAvatar.js
