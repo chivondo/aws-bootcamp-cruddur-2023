@@ -116,7 +116,7 @@ Create `ProfileForm.js` and `ProfileForm.css`  .This is where the Bio and the up
 ### Presigned URL generation via Ruby Lambda
 * Create ruby function to upload images to presigned url.
 - Create gem file and add requirements `bundle install`
-- Execute file `bundle exec ruby function.rb
+- Execute file `bundle exec ruby function.rb`
 - Create JWT authorizer
 * Create API Gateway
 * 
