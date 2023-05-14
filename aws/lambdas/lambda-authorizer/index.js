@@ -1,6 +1,6 @@
 "use strict";
 const { CognitoJwtVerifier } = require("aws-jwt-verify");
-const { assertStringEquals } = require("aws-jwt-verify/assert");
+//const { assertStringEquals } = require("aws-jwt-verify/assert");
 
 const jwtVerifier = CognitoJwtVerifier.create({
   userPoolId: process.env.USER_POOL_ID,
