@@ -118,10 +118,24 @@ Create `ProfileForm.js` and `ProfileForm.css`  .This is where the Bio and the up
 - Create gem file and add requirements `bundle install`
 - Execute file `bundle exec ruby function.rb`
 - Create JWT authorizer
+   - Make sure to install `npm install aws-jwt-verify --save` and save it with a zip file in your Lambda function. And double check the node_modules are there.
+   - Used Solution from `@beiciliang` for LambdaAuthorizer to work.
 * Create API Gateway
 * 
 ### HTTP API Gateway with Lambda Authorizer
-
+* Create HTTP API gateway api.<your-domain>.com
+   2 Routes:
+      Method POST: /avatar/key_upload. Attach authorization to CruddurAPIGatewayLAmbdaAuthorizer. Attach integration to CruddurAvatarUpload.
+      Method OPTIONS: /{proxy+}. Attach only intergration to Cruddur AvatarUpload.
+   
 ### Create JWT Lambda Layer
 
+   Image with cognito ID shows in the assets folder:
+  ![CognitoID](assets/cognitoID)
+   
 ### Render Avatars in App via CloudFront
+   * Create ProfileAvatar.js
+   * Modify ProfileInfo.js to render avatar
+   
+ ![RenderAvatar](assets/RenderAvatar.png)
+   
