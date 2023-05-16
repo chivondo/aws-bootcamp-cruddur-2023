@@ -2,7 +2,7 @@
 
 Many ways to do this. We will focus with CodePipeline, the idea is to automate pushing and deploying images.
 
-Artifact is to store 
+Artifact are the files that are worked on by actions in the pipeline.  It's stored in a s3 bucket.
 
 ## Required Homework
 
@@ -34,20 +34,26 @@ After that I was able to build the CodeBuild sucessfully.
 Add build stage
 Output image for the build stage is `ImageDefinition`
 Input image for the deploy stage is `ImageDefinition`
-Click `Release change`
+Click `Release change` and pipeline is created.
+
 ![Code Pipeline Success](assets/pipeline.png)
+
 Check our backend health check to see if its running:
 
 ![HealthCheck](assets/health-check.png)
+
 Modify health check to a new version in our `app.py` file.
 
-We make a new pull-merge from Prod
+We make a new pull-merge from Prod it triggers the source and a new build is processing.
+
 ![newBuild](assets/newBuild.png)
 
 New health-check version deployed
+
 ![HealthCheckv1](assets/health-checkv1.png)
 
 New deploy took around 14 min from the merge pull to full deploy
+
 ![newDeploy](assets/newDeploy.png)
 
 
