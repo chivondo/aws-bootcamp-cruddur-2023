@@ -47,7 +47,7 @@ We make a new pull-merge from Prod
 New health-check version deployed
 ![HealthCheckv1](assets/health-checkv1.png)
 
-New deploy took around 15 min from the merge pull to full deploy
+New deploy took around 14 min from the merge pull to full deploy
 ![newDeploy](assets/newDeploy.png)
 
 
