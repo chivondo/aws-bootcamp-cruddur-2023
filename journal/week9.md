@@ -31,3 +31,27 @@ After that I was able to build the CodeBuild sucessfully.
 
 
 ### Configuring CodePipeline
+Add build stage
+Output image for the build stage is `ImageDefinition`
+Input image for the deploy stage is `ImageDefinition`
+Click `Release change`
+![Code Pipeline Success](assets/pipeline.png)
+Check our backend health check to see if its running:
+
+![HealthCheck](assets/health-check.png)
+Modify health check to a new version in our `app.py` file.
+
+We make a new pull-merge from Prod
+![newBuild](assets/newBuild.png)
+
+New health-check version deployed
+![HealthCheckv1](assets/health-checkv1.png)
+
+New deploy took around 15 min from the merge pull to full deploy
+![newDeploy](assets/newDeploy.png)
+
+
+
+
+
+
