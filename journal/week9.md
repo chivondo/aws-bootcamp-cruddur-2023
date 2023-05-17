@@ -4,10 +4,27 @@ Many ways to do this. We will focus with CodePipeline, the idea is to automate p
 
 Artifact are the files that are worked on by actions in the pipeline.  It's stored in a s3 bucket.
 
+You need a source code repository
+
 ## Required Homework
 
 ### CICD Pipeline Security
+* OWASP Top 10 CI/CD Security Risk
+#### Best practice AWS
+* Compliance standard of your region
+* Amazon Organizations SCP, to restrict actions in the CI/CD pipeline services
+* AWS CloudTrain is enabled & monitored to trigger alerts 
+* GuardDuty is enabled for monitoring suspicious DNS comms and automated for auto-remediation
+* AWS Config Rules is enabled.
 
+#### Security Best Practice - Application
+* Access Control -Roles or IAM Users for making changes in CICD
+* Security of the CI/CD Pipeline - source control, secret management, container registry
+* Security in the CI/CD Pipeline - Code security best practices - SCA, SAST, Secret Scanner, DAST implemented in the CI/CD
+* Security of the CI/CD pipeline entry points 
+* Enable Encryption in transit using TLS/SSL certification
+* Only use Trusted Source Control for sending changes to CI/CD
+* Develop process for continously verifying if there is a change that may compromise the known state of a CI/CD pipeline
 
 
 ### Configuring CodeBuild Part 1
