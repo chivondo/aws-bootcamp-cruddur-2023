@@ -26,7 +26,8 @@ Create a unique name S3 bucket `cfn-artifacts-jv84` in AWS and add it to the Clo
 
 The template will be saved in the S3 bucket.
 
-![S3template][assets/S3template.png}
+![S3template](assets/S3template.png)
+
 
 
 
