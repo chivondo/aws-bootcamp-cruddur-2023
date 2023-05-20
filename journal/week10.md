@@ -29,5 +29,20 @@ The template will be saved in the S3 bucket.
 ![S3template](assets/s3template.png)
 
 
+### Networking layer
+
+Create a new networking folder with file `template.yaml`. [Networking](link)
+You need the following components:
+* VPC
+* IGW
+* Route Table
+* Subnets
+* Outputs
+
+Result in CloudFormation:
+
+![Networking](assets/networking.png)
+
+
 
 
