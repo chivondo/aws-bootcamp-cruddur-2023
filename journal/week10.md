@@ -43,6 +43,9 @@ Result in CloudFormation:
 
 ![Networking](assets/networking.png)
 
+Networking Diagram - [NetDiagram](https://lucid.app/lucidchart/22207a1a-dae1-4147-8836-8a75f8a9419f/edit?viewport_loc=-342%2C7%2C2933%2C1394%2CWAPZBnZ3av3o&invitationId=inv_d6c467eb-15fa-4278-804e-7cb35cad388e)
+
+![netdiagram](assets/netdiagram.png)
 
 
 
