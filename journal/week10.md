@@ -47,5 +47,10 @@ Networking Diagram - [NetDiagram](https://lucid.app/lucidchart/22207a1a-dae1-414
 
 ![netdiagram](assets/netdiagram.png)
 
+### Cluster Layer
+
+Create a Cluster template
+
+
 
 
