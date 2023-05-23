@@ -5,10 +5,10 @@ CFN_PATH="/workspace/aws-bootcamp-cruddur-2023/aws/cfn/networking/template.yaml"
 
 cfn-lint $CFN_PATH
 aws cloudformation deploy \
-    --stack-name "Cruddur" \
+    --stack-name "CrdNet" \
     --template-file $CFN_PATH \
     --s3-bucket $CFN_BUCKET \
     --no-execute-changeset \
-    --tags group=cruddur_cluster \
+    --tags group=cruddur_networking \
     --capabilities CAPABILITY_NAMED_IAM
 
