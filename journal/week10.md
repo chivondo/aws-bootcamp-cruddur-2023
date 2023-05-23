@@ -50,6 +50,11 @@ Networking Diagram - [NetDiagram](https://lucid.app/lucidchart/22207a1a-dae1-414
 ### Cluster Layer
 
 Create a Cluster template
+Use Crossreference stack
+
+Install cfn-toml `gem install cfn-toml`
+
+
 
 
 
