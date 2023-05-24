@@ -15,6 +15,7 @@ Description: |
     - redirects to HTTPS Listerner
   - Backend Target Group
   - Frontend Target Group
+
 Parameters:
   NetworkingStack:
     Type: String
@@ -73,11 +74,11 @@ Parameters:
     Type: Number
     Default: 2
 Resources:
-#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html
-  ECSCluster: #LogicalName
+  FargateCluster:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html
     Type: AWS::ECS::Cluster
     Properties:
-      ClusterName: !Sub "${'AWS::StackName'}FargateCluster"
+      ClusterName: !Sub "${AWS::StackName}FargateCluster"
       CapacityProviders:
         - FARGATE
       ClusterSettings:
@@ -88,7 +89,7 @@ Resources:
           # KmsKeyId: !Ref KmsKeyId
           Logging: DEFAULT
       ServiceConnectDefaults:
-        Namespace: cruddur    
+        Namespace: cruddur
   ALB:
     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
@@ -157,7 +158,7 @@ Resources:
         - Field: host-header
           HostHeaderConfig: 
             Values: 
-              - api.verainvestmentsllc.com
+              - api.cruddur.com
       Actions: 
         - Type: forward
           TargetGroupArn:  !Ref BackendTG
@@ -170,7 +171,7 @@ Resources:
       GroupName: !Sub "${AWS::StackName}AlbSG"
       GroupDescription: Public Facing SG for our Cruddur ALB
       VpcId:
-        Fn::ImportValue: #cross-reference 
+        Fn::ImportValue:
           !Sub ${NetworkingStack}VpcId
       SecurityGroupIngress:
         - IpProtocol: tcp
@@ -183,6 +184,22 @@ Resources:
           ToPort: 80
           CidrIp: '0.0.0.0/0'
           Description: INTERNET HTTP
+  # We have to create this SG before the service so we can pass it to database SG
+  ServiceSG:
+    # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: !Sub "${AWS::StackName}ServSG"
+      GroupDescription: Security for Fargate Services for Cruddur
+      VpcId:
+        Fn::ImportValue:
+          !Sub ${NetworkingStack}VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          SourceSecurityGroupId: !GetAtt ALBSG.GroupId
+          FromPort: !Ref BackendPort
+          ToPort: !Ref BackendPort
+          Description: ALB HTTP
   BackendTG:
     # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
@@ -241,5 +258,24 @@ Resources:
       Tags:
         - Key: target-group-name
           Value: frontend
-#Outputs:
-  
+Outputs:
+  ClusterName:
+    Value: !Ref FargateCluster
+    Export:
+      Name: !Sub "${AWS::StackName}ClusterName"
+  ServiceSecurityGroupId:
+    Value: !GetAtt ServiceSG.GroupId
+    Export:
+      Name: !Sub "${AWS::StackName}ServiceSecurityGroupId"
+  ALBSecurityGroupId:
+    Value: !GetAtt ALBSG.GroupId
+    Export:
+      Name: !Sub "${AWS::StackName}ALBSecurityGroupId"
+  FrontendTGArn:
+    Value: !Ref FrontendTG
+    Export:
+      Name: !Sub "${AWS::StackName}FrontendTGArn"
+  BackendTGArn:
+    Value: !Ref BackendTG
+    Export:
+      Name: !Sub "${AWS::StackName}BackendTGArn"
