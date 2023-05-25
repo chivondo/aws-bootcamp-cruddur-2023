@@ -49,10 +49,14 @@ Networking Diagram - [NetDiagram](https://lucid.app/lucidchart/22207a1a-dae1-414
 
 ### Cluster Layer
 
-Create a Cluster template
+Create a Cluster template [Cluster](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/aws/cfn/cluster/template.yaml)
+
 Use Crossreference stack
 
 Install cfn-toml `gem install cfn-toml`
+
+CFN cluster created in CLoudFormation
+![cfnCluster](cfnCluster.png)
 
 
 
