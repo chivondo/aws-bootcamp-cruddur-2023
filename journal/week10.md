@@ -56,7 +56,24 @@ Use Crossreference stack
 Install cfn-toml `gem install cfn-toml`
 
 CFN cluster created in CLoudFormation
-![cfnCluster](cfnCluster.png)
+![cfnCluster](assets/cfnCluster.png)
+
+### Service Layer
+
+Create a Service template similar to the networking and cluster stack
+
+Delete the existing executing role in the IAM console since it cannot have duplicate names.
+
+After creating the Service Stack in cloudformation ECS backend task is failing because RDS is in different VPC and subnets. Need to first create a RDS service associated to the Same VPC as the new backend Service Stack.
+
+### RDS Layer stack
+
+Create RDS Service template.
+
+Make sure to change the parameters in the Parameter Store to the new DB instance.
+
+![cfnRDS](assets/cfnRDS.png)
+
 
 
 
