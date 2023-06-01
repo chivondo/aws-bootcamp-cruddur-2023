@@ -81,9 +81,17 @@ BackEnd Service Stack is created successfully.
 
 ### DDB 
 
-Use SAM Template
+Install SAM Template and add it to gitpod.yml
 
+SAM build
 
+SAM package
+
+SAM deploy
+
+DDB stack Created
+
+![ddb-stack](assets/ddb-stack)
 
 
 
