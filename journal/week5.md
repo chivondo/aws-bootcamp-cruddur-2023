@@ -1,4 +1,4 @@
 # Week 5 — DynamoDB and Serverless Caching
 
-![cruddur-table](cruddur-table-messages.png)
+![cruddur-table](assets/cruddur-table-messages.png)
 
