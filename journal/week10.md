@@ -91,7 +91,7 @@ SAM deploy
 
 DDB stack Created
 
-![ddb-stack](assets/ddb-stack)
+![ddb-stack](assets/ddb-stack.png)
 
 
 
