@@ -79,8 +79,9 @@ After creating the new RDS instance. We need change in the parameter store the C
 BackEnd Service Stack is created successfully.
 ![CfnBackend](assets/cfnBackend.png)
 
+### DDB 
 
-
+Use SAM Template
 
 
 
