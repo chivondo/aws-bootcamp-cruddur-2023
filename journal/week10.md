@@ -94,6 +94,15 @@ DDB stack Created
 ![ddb-stack](assets/ddb-stack.png)
 
 
+### CICD
+
+Create a nested folder with codebuild.yaml 
+
+CFN CICD stack created
+![cfnCICD](cfnCICD.png)
+
+Need to update the pending connection in the CodePipeline settings
+
 
 
 
