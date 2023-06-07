@@ -99,10 +99,18 @@ DDB stack Created
 Create a nested folder with codebuild.yaml 
 
 CFN CICD stack created
-![cfnCICD](cfnCICD.png)
+![cfnCICD](assets/cfnCICD.png)
 
 Need to update the pending connection in the CodePipeline settings
 
+### CFN FrontEnd
+
+Create Naked domain and www domain. The www domain will point to the naked domain. We are going to use CloudFront to static hosting.
+
+Create cong.toml and template.yaml for the Frontend
+
+CFN for the FrontEnd created:
+![cfnFrontend](assets/cfnFrontend.png)
 
 
 
