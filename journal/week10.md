@@ -6,6 +6,21 @@ CloudFormation is AWS IaC tool and AWS manages it for you which is an advantage 
 
 CloudFormation can be written in JSON or YAML. We will use YAML for our project.
 
+### Security 
+#### AWS
+* Compliance standard and is available in the region you need to perate in.
+* Use AWS SCP to restrict actions like creation, deletion and modification of production Cloudformation Templates/Resource etc
+* AWS CloudTrail is enabled & monitored to trigger alerts for malicious activities, for example change to production Environment
+* Use AWS Audit Manger, IAM Access Analyzer, etc
+#### CLient side
+
+* Access control  -roles
+* Security of the Cloudformation - Configuration access
+* Security int he Cloudformation - Code Security Best Practices - SCA, SAST, Secret Scanner, DAST implemented in the CI/CD pipeline
+* Security of the CloudFormation entry points e.g - private access points using AWS Private Link, etc
+* Only use Trusted source control for sending changes to CFN.
+* Develop process for continously verifying if there is a change or any compromise the known state of a CI/CD pipeline.
+
 Create a cfn folder in our repo and start with the `template.yaml`. Is good idea to have the templates in your project.
 
 MultiLayer architecture : Web tier ; Applications Tier; Database Tier
