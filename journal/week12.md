@@ -1,5 +1,7 @@
 # Week X — CleanUp
 
+## Required Homework
+### Sync tool for static website hosting
 Create static-build script 
 Try to fix some of the errors in the frontend pages code. 
 
@@ -10,4 +12,7 @@ Use `aws_s3_website_sync` [library](https://github.com/teacherseat/aws-s3-websit
 Create ruby script sync under /bin/frontend.
 
 `gem install dontenv`
+
+Make a small change in the frontend, run the static-build script and sync.
+
 
