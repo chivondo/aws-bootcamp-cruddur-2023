@@ -1,7 +1,6 @@
 import './ReplyForm.css';
 import React from "react";
 import process from 'process';
-import {ReactComponent as BombIcon} from './svg/bomb.svg';
 
 import ActivityContent  from '../components/ActivityContent';
 
@@ -56,7 +55,12 @@ export default function ReplyForm(props) {
     setCount(event.target.value.length);
     setMessage(event.target.value);
   }
-
+  
+  const close = ()=> {
+    console.log('close')
+    //props.setPopped(false)
+  }
+  
   let content;
   if (props.activity){
     content = <ActivityContent activity={props.activity} />;
