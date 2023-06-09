@@ -1,1 +1,13 @@
-# Week 12 — Modern APIs
+# Week X — CleanUp
+
+Create static-build script 
+Try to fix some of the errors in the frontend pages code. 
+
+Run `static-build` script and zip the `build` folder and upload it to you domain.com bucket.
+
+Use `aws_s3_website_sync` [library](https://github.com/teacherseat/aws-s3-website-sync) and install it `gem install aws_s3_website_sync`
+
+Create ruby script sync under /bin/frontend.
+
+`gem install dontenv`
+
