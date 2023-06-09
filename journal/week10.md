@@ -66,7 +66,7 @@ Networking Diagram - [NetDiagram](https://lucid.app/lucidchart/22207a1a-dae1-414
 
 Create a Cluster template [Cluster](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/aws/cfn/cluster/template.yaml)
 
-Use Crossreference stack
+Use  [Cross-stack reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html) to export resource from one stack to another. This way you can use a layered services and don't include all the resources in one template file
 
 Install cfn-toml `gem install cfn-toml`
 
