@@ -1,0 +1,9 @@
+[deploy]
+bucket = 'cfn-artifacts-jv84'
+region = 'us-east-1'
+stack_name = 'CrdSyncRole'
+
+[parameters]
+GitHubOrg = 'chivondo'
+RepositoryName = 'aws-bootcamp-cruddur-2023'
+OIDCProviderArn = ''
