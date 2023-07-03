@@ -41,11 +41,39 @@ DDb Data Modeling:
 
 
 ### Watched Ashish's Week 5 - DynamoDB Considerations
+Security Best Practices - AWS 
+* Use VPC endpoints: Create private network from your application or lambda to DynamoDB. Helps prevent unauthorized access from the internet.
+* Compliance standard is what your business requires.
+* DynamoDB should only be in the AWS region that you are legally allowed to be holding user data in.
+* Amazon organizations SCP - to manage DynamoDB table deletion, DynamoDB creation, region lock etc.
+* AWS Cloudtrail is enabled & monitored to trigger alerts on malicious DynamoDB behavior by an identity in AWS.
+* AWS Config Rules is enabled in the account and region of DynamoDB
+Security Best Practices - Application
+* DynamoDB to use appropiate Authentication - Use IAM roles/AWS Cognito Identity pool - Avoid IAM Users/Groups
+* DYnamoDB User lifecycle Management - Create, Modify, Delete Users
+* AWS IAM roles instead of individual users to access and manage DynamoDB
+* DAX Service (IAM) Role to have Read-only access to DynamoDB (If possible)
+* Not have DynamoDB be accessed from the internet ( use VPC Endpoints)
+* Site to Site VPN or Direct Connect for On-premise and DynamoDB access
+* Client-side encryption is recommended by Amazon for DynamoDB.
 
 ### Implement Schema Load Script
+Add [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) SDK to your list of requirements.txt
+`pip install -r requirements.txt`
+
+Implement [schema-load](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/ddb/schema-load) using Boto3 - `/ddb/schema-load`
+This is where you add the attributes of your table
+
+Create [list-tables](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/ddb/list-tables) script. `bin/ddb/list-tables`
+
+Create ddb [drop](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/ddb/drop) table script `bin/ddb/drop`
 
 ### Implement Seed Script
 
+Create ddb [seed](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/ddb/seed) script `bin/ddb/drop`
+Implement the access pattern in this script
+* Create message
+* Create message group
 
 ### Implement Scan Script
 
