@@ -74,13 +74,34 @@ Create ddb [seed](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/mai
 Implement the access pattern in this script
 * Create message
 * Create message group
+* Get user uuids  `get_user_uuids()` . Retreat users from database and assign them to variables.
+
 
 ### Implement Scan Script
 
+Create ddb [scan](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/ddb/scan) script `bin/ddb/scan` This will only work locally since scans can be expensive on production in the cloud.
+
 ### Implement Pattern Scripts for Read and List Conversations
+Create [get-conversation](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/ddb/patterns/get-conversation) script. `/ddb/patterns/get-conversation`
+Create [list-conversation](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/ddb/patterns/list-conversation) script. `ddb/patterns/list-conversation` Access pattern to show the conversation between two users
+
+![get-conversation](assets/get-conversation.png)
 
 
 ### Implement Update Cognito ID Script for Postgres Database
+
+Create cognito [list-users](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/cognito/list-users). `bin/cognito/list-users` With this script we get the sub and handle (preferred_username) of our users.
+
+Create [update_cognito_user_ids](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/bin/db/update_cognito_user_ids). `/bin/db/update_cognito_users_ids`
+
+Create [ddb.py](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/backend-flask/lib/ddb.py) library. `backend-flask/lib/ddb.py` We use stateless class compared to the db.py lib
+
+Create [message_groupss.py](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/backend-flask/services/message_groups.py) service. `services/message_groups.py`
+
+Create [uuid_from_cognito](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/backend-flask/db/sql/users/uuid_from_cognito_user_id.sql) sql file. `backend-flask/sql/users/uuid_from_cognito_user_id.sql`
+
+Add the bearer token in the pages that require authentication. ```headers: { 'Authorization': `Bearer ${access_token}` ```
+
 
 ### Implement (Pattern A) Listing Messages in Message Group into Application
 
