@@ -100,18 +100,42 @@ Create [message_groupss.py](https://github.com/chivondo/aws-bootcamp-cruddur-202
 
 Create [uuid_from_cognito](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/backend-flask/db/sql/users/uuid_from_cognito_user_id.sql) sql file. `backend-flask/sql/users/uuid_from_cognito_user_id.sql`
 
-Add the bearer token in the pages that require authentication. ```headers: { 'Authorization': `Bearer ${access_token}` ```
+Add the bearer token in the js pages that require authentication. ```headers: { 'Authorization': `Bearer ${access_token}` ```
+`MessageForm.js` ,`MessageGroupNewPage.js` , `MessageGrouppage.js` , `MessageGroupsPage.js`
 
+Create js file [CheckAuth.js](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/frontend-react-js/src/lib/CheckAuth.js). `/frontend-react-js/src/lib/CheckAuth.js`
+
+![firstfillermessage](assets/firstfillermessage.png)
 
 ### Implement (Pattern A) Listing Messages in Message Group into Application
 
 ### Implement (Pattern B) Listing Messages Group into Application
 
+![conversationshowing](assets/conversationshowing.png)
+
 ### Implement (Pattern C) Creating a Message for an existing Message Group into Application
+Add [create_message.py](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/backend-flask/services/create_message.py) service. 
 
+Add [create_message_users.sql](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/backend-flask/db/sql/users/create_message_users.sql) `db/sql/users/create_message_users.sql`
+
+![newMessageWorking](assets/newMessageWorking.png)
 ### Implement (Pattern D) Creating a Message for a new Message Group into Application
+Create a [MessageGroupNewPage](https://github.com/chivondo/aws-bootcamp-cruddur-2023/blob/main/frontend-react-js/src/pages/MessageGroupNewPage.js) 
 
+Add path in `app.js`:
+```
+  {
+    path: "/messages/new/:handle",
+    element: <MessageGroupNewPage />
+  },
+
+Create user_short.py , short.sql and MessageGroupNewItem.js
+
+![newMessageLondo](assets/newMessageLondo.png)
 ### Implement (Pattern E) Updating a Message Group using DynamoDB Streams
 
 ![cruddur-table](assets/cruddur-table-messages.png)
 
+![FixingTimeZone](assets/FixingTimeZone.png)
+
+![doneWithDynamoDB](assets/doneWithDynamoDB.png)
