@@ -128,7 +128,7 @@ Add path in `app.js`:
     path: "/messages/new/:handle",
     element: <MessageGroupNewPage />
   },
-
+```
 Create user_short.py , short.sql and MessageGroupNewItem.js
 
 ![newMessageLondo](assets/newMessageLondo.png)
