@@ -134,8 +134,17 @@ Create user_short.py , short.sql and MessageGroupNewItem.js
 ![newMessageLondo](assets/newMessageLondo.png)
 ### Implement (Pattern E) Updating a Message Group using DynamoDB Streams
 
+* Create a VPC endpoint -> ddb-cruddur
+![dynamoDbEndpoint](assets/dynamoDbEndpoint.png)
+* Create AWS lambda named cruddur-messaging-stream and add AWSLambdaInvocation-DynamoDB and AmazonDynamoDBFullAccess to the role policy.
+
+
 ![cruddur-table](assets/cruddur-table-messages.png)
+
+#### Fixing TimeZone
 
 ![FixingTimeZone](assets/FixingTimeZone.png)
 
+
+Final screenshot after finishing with DynamoDB
 ![doneWithDynamoDB](assets/doneWithDynamoDB.png)
